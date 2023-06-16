@@ -9,8 +9,8 @@ async function register(username, password) {
     if (existing) {
         throw new Error("Username is taken")
     }
-    const hashedPasswor = await bcrypt.hash(password, 10)
-    const user = await User.create(username, hashedPasswor);
+    const hashedPassword = await bcrypt.hash(password, 10)
+    const user = await User.create(username, hashedPassword);
 
     // TODO see assignment if registration create user session
     const token = createSession(user);

@@ -14,6 +14,8 @@ Full CRUD (application specific)
 - details
 - catalog
 
+Demo globa error handling
+
 
 
 
