@@ -1,4 +1,4 @@
-[] Use of templates
+[x] Use of templates
 [] Use of a database
  User registration
 [] - cookies and session
