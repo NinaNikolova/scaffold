@@ -1,5 +1,6 @@
 [x] Use of templates
-[] Use of a database
+[x] Use of a database
+[] Use of express plugin libraries
  User registration
 [] - cookies and session
 [] - hashing of passwords
