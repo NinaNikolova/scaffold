@@ -1,4 +1,5 @@
-const { register, login } = require('../services/userService')
+const { register, login } = require('../services/userService');
+const { parseError } = require('../util/parser');
 const authController = require('express').Router();
 
 authController.get('/register', (req, res) => {
@@ -21,8 +22,8 @@ authController.post('/register', async (req, res) => {
         res.cookie('token', token, { httpOnly: true })
         res.redirect('/') //TODO replace with redirect by assignment
     } catch (error) {
-        // TODO add error parser
-        const errors = [error.message]
+       
+        const errors = parseError(error)
         // TODO add error display to actual template from assignment
         res.render('register', {
             title: "Register Page",
