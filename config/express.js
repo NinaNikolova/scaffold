@@ -2,6 +2,7 @@ const express = require('express');
 const handlebars = require('express-handlebars');
 const cookieParser = require('cookie-parser');
 const session = require('../middlewares/session');
+const trimBody = require('../middlewares/trimBody');
 
 
 
@@ -10,12 +11,12 @@ module.exports = (app) => {
         extname: '.hbs'
     })
     app.engine('.hbs', hbs.engine)
-    // .hbs da e po podrazbirane razshirenie i da go propuskame po-natatyk
-    app.set('view engine', '.hbs');
-    
+        app.set('view engine', '.hbs'); // .hbs to be without .hbs in render by default
+
     app.use('/static', express.static('static'));
-    app.use(express.urlencoded({extended: true}));
-app.use(cookieParser());
-app.use(session())
+    app.use(express.urlencoded({ extended: true }));
+    app.use(cookieParser());
+    app.use(session())
+    app.use(trimBody())
 
 }

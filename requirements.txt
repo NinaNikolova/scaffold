@@ -1,11 +1,11 @@
 [x] Use of templates
 [x] Use of a database
-[] Use of express plugin libraries
- User registration
-[] - cookies and session
-[] - hashing of passwords
-[] - JSON Web token
-[] - Error handling
+[x] Use of express plugin libraries
+[x] User registration
+[x] - cookies and session
+[x] - hashing of passwords
+[x] - JSON Web token
+[x] - Error handling
 
 Full CRUD (application specific)
 - create
@@ -14,7 +14,7 @@ Full CRUD (application specific)
 - details
 - catalog
 
-Demo globa error handling
+
 
 
 
