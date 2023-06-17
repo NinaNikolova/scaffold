@@ -1,7 +1,15 @@
 <h1>Register Page</h1>
+{{#if error}}
 
+<div>
+    {{#each errors}}
+    {{this}}
+    {{/each}}
+</div>
+{{/if}}
 <form method="post">
-<label>Username: <input type="text" name="username"></label>
-<label>Password: <input type="password" name="password"></label>
-<button>Register</button>
+    <label>Username: <input type="text" name="username"></label>
+    <label>Password: <input type="password" name="password"></label>
+    <label>Re-Password: <input type="password" name="repass"></label>
+    <button>Register</button>
 </form>
