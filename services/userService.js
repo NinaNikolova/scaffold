@@ -18,8 +18,18 @@ async function register(username, password) {
     const token = createSession(user)
     return token;
 }
-async function login(userData) {
+async function login(username, password) {
+    const existing = await User.findOne({username}).collation({locale:'en', strength: 2})
+    if(!existing){
+        throw new Error('Incorrect username or password')
+    }
+    const hasMatch = await bcrypt.compare(password, existing.hashedPassword);
 
+    if(hasMatch==false){
+        throw new Error('Incorrect username or password')
+    }
+    const token = createSession(existing)
+    return token;
 }
 
 function createSession(user) {
@@ -31,8 +41,8 @@ function createSession(user) {
     return token;
 }
 
-function verifyToken() {
-
+function verifyToken(token) {
+return jwt.verify(token, JWT_SECRET)
 }
 
 module.exports = {
