@@ -11,6 +11,16 @@
     <a href="/auth/login">Login</a>
     <a href="/auth/register">Register</a>
     <a href="/auth/logout">Logout</a>
+
+    {{#if error}}
+
+<div>
+    {{#each errors}}
+    {{this}}
+    {{/each}}
+</div>
+{{/if}}
+
     {{{body}}}
 </body>
 
