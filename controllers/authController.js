@@ -22,7 +22,7 @@ authController.post('/register', async (req, res) => {
         res.cookie('token', token, { httpOnly: true })
         res.redirect('/') //TODO replace with redirect by assignment
     } catch (error) {
-       
+       console.log(error.errors)
         const errors = parseError(error)
         // TODO add error display to actual template from assignment
         res.render('register', {
