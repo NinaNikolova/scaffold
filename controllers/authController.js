@@ -37,6 +37,7 @@ authController.post('/register', async (req, res) => {
 })
 
 authController.get('/login', (req, res) => {
+    //TODO replace with actual view by assignment
     res.render('login', {
         title: "Login Page"
     })
@@ -53,6 +54,7 @@ authController.post('/login', async (req, res) => {
 
     } catch (error) {
         const errors = parseError(error);
+           // TODO add error display to actual template from assignment
         res.render('login', {
             title: 'Login Page',
             errors,

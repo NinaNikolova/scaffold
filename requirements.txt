@@ -6,6 +6,7 @@
 [x] - hashing of passwords
 [x] - JSON Web token
 [x] - Error handling
+[x] - Use role guards
 
 Full CRUD (application specific)
 - create
